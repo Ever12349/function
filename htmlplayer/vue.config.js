@@ -5,6 +5,7 @@ module.exports = {
   lintOnSave: false,
   filenameHashing: !IS_PROD,
   productionSourceMap: false,
+  outputDir: 'docs',
   configureWebpack(config) {
     if (IS_PROD) {
       config.externals = {
