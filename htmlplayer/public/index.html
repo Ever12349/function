@@ -11,6 +11,20 @@
   <title>htmlplayer</title>
   <link rel="stylesheet" type="text/css" href='./animate.min.css' />
 
+  <!-- 使用CDN的JS文件 -->
+  <% for (var i in htmlWebpackPlugin.options.cdn &&
+    htmlWebpackPlugin.options.cdn.js) { %>
+  <script type="text/javascript" src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+  <% } %>
+
+
+  <% if(htmlWebpackPlugin.options.is_prod ){%>
+  <script>
+    window.console.log = function () { return false }
+  </script>
+  <% } %>
+
+
 </head>
 
 <body>
